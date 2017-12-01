@@ -392,7 +392,8 @@ def trainIters(encoder, decoder, print_every=1000, plot_every=100):
                 plot_loss_total = 0
 
         # save epoch:
-        torch.save(self.encoder.state_dict(),'encoderRNN_sel_%3f_epoch_%d.pth' % (sel,epoch))
+        torch.save(encoder.state_dict(),'encoderRNN_sel_%3f_epoch_%d.pth' % (sel,epoch))
+        torch.save(decoder.state_dict(),'decoderRNN_sel_%3f_epoch_%d.pth' % (sel,epoch))
 
 ######################################## MAIN SCRIPT
 
