@@ -366,7 +366,7 @@ def trainIters(encoder, decoder, print_every=1000, plot_every=100):
 
     for epoch in range(hp.num_epoch):
         print("EPOCH # ",epoch)
-        for iter in range(1, iter_per_epoch+1):
+        for iter in range(1, int(iter_per_epoch)+1):
             batch_inputs,batch_targets,lengths_inputs,lengths_targets = make_batch((iter-1)*hp.batch_size)
 
             loss = train(batch_inputs, batch_targets, lengths_inputs, lengths_targets, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion)
