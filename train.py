@@ -6,9 +6,6 @@ import random
 import time
 import math
 
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
@@ -20,18 +17,18 @@ import torch.nn.functional as F
 
 class HParams():
     def __init__(self):
-        self.n_layers = 2 # nbr de layer des lstm
-        self.hidden_size = 512 # nbr de neurones qui encodent le context
-        self.fc_size = 512 # couche intermediere entre le context et les mots possibles
-        self.dropout = 0.9 # dropout pour reguler la convergence du lstm
-        self.batch_size = 20 # nbr d inputs traites a chaque iteration
-        self.lr = 0.001 # learning rate
-        self.lr_decay = 0.9999 # on lr*=0.9999 apres chaque iteration pour gagner en precision au fur et a mesur
-        self.min_lr = 0.00001 # on arrete de diminuer le lr au delas de cette valeur
-        self.grad_clip = 5. # si le gradient est plus grand que 5 on le clip a 5 (pour eviter d'avoir des gradient qui divergent)
-        self.cuda = True # pour aller vite
-        self.num_epoch = 200 # nombre de fois qu'on va traiter tout les inputs
-        self.max_length = 10 # longeur max des phrases apprises
+        self.n_layers = 2
+        self.hidden_size = 512
+        self.fc_size = 512
+        self.dropout = 0.9
+        self.batch_size = 20
+        self.lr = 0.001
+        self.lr_decay = 0.9999
+        self.min_lr = 0.00001
+        self.grad_clip = 5.
+        self.cuda = True
+        self.num_epoch = 200
+        self.max_length = 10
 
 hp = HParams()
 
